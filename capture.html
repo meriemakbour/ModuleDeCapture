@@ -1,0 +1,71 @@
+<html>
+          <head>
+              <link rel="stylesheet" type="text/css" href="bootstrap.css">
+          </head>
+<body>
+
+  <video controls>
+    <source src="Big_Buck_Bunny_Trailer.mp4" type="video/mp4"></source>
+  </video>
+  <canvas id="canvas" width="640" height="480"></canvas>
+  <button id="snap" onclick="snap()" class="btn btn-primary">Capturer</button>
+  <div><label>Teinte</label><input type="range"  id="" min="0" onchange="refresh(this.value,'hue-rotate','deg')"
+    max="360" step="3"></div>
+
+<div><label>Contraste</label><input type="range"  id="" min="0" onchange="refresh(this.value,'contrast','%')"
+   max="360" step="3"></div>
+
+<div><label>Luminosité</label><input type="range"  id="" min="0" onchange="refresh(this.value,'brightness','%')"
+    max="360" step="3"></div>
+
+
+
+  <!-- start the script ... within that declare variables as follows... -->
+  <script>
+  var video=document.querySelector('video');
+  var canvas=document.querySelector('canvas');
+  var context=canvas.getContext('2d');
+  img = document.querySelector('video')
+  var w,h,ratio;
+  let value = 0;
+
+  //Ajouter loadedmetadata pour identifier les attribues de la video
+
+  video.addEventListener('loadedmetadata', function() {
+    ratio = video.videoWidth/video.videoHeight;
+    w = video.videoWidth-100;
+    h = parseInt(w/ratio,10);
+    canvas.width = w;
+    canvas.height = h;
+  },false);
+
+  function snap() {
+    //setTimeout( function(){
+    context.fillRect(0,0,w,h);
+    context.drawImage(video,0,0,w,h);
+    //}, 3000); // capturer dans 3 secondes
+  }
+  img = context.getImageData(0,0,w,h)
+  
+
+  function refresh(v,type,unite) {
+        value = v
+       draw(type,unite)
+       console.log(value)
+    }
+
+    function draw(type,unite) {
+        canvas.height = h;
+        context.filter = type+'(' + value + unite+')'
+        context.drawImage(img, 0, 0, w, h)
+        const imageData = context.getImageData(0, 0, canvas.width, canvas.height),
+        data = imageData.data
+        for(let i=0; i<data.length; i+=4) {
+            const r = data[i], g = data[i+1], b = data[i+2], a = data[i+3]
+        }
+        ctx.putImageData(imageData, 0, 0)
+    }
+  </script>
+
+</body>
+</html>
