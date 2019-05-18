@@ -1,0 +1,133 @@
+#centerdiv{
+  position : absolute;
+    top:30;
+    left:0px;
+	display:none;
+  }
+ #countdown{
+  position : absolute;
+  top : 90;
+  left : 80;
+  color :white;
+  font-size: 34px;
+  text-align: center;
+  width:40px;
+  height:40px;
+  border-radius: 20px;
+  border : 3px solid white;
+  display:none;
+}
+#cont{
+     margin-top:-4.5px;
+    width:400px;
+    height:224px;
+    position: absolute;
+    top:25;
+    float:left; 
+}
+video , #container{
+  background-color: black;
+}
+
+video{
+	position:absolute;
+	top:20;
+	left:0;
+    object-fit: fill;
+}
+canvas{
+    width:400px;
+    height:224px;
+}
+
+#container{
+    margin-top:-4.5px;
+    width:400px;
+    height:224px;
+    position: absolute;
+	 top:40;
+	 left:470px;
+    float:left;
+}
+
+
+#cadre {
+    position: absolute;
+    top: 10;
+    left:10;
+    width:50;
+    height:50;
+    filter: brightness(40%);
+    border: 2px dotted gray;
+    display:none;
+  }
+  
+  .corner{
+    position: absolute;
+    width:5px;
+    height: 5px;
+    background-color : black;
+  }
+  .tl{
+    top : 0;
+    left : 0;
+    cursor: nwse-resize;
+
+}
+.tr{
+    top : 0;
+    right : 0;
+    cursor: nesw-resize;
+
+}
+.br{
+    bottom : 0;
+    right : 0;
+    cursor: nwse-resize;
+
+}
+.bl{
+    bottom : 0;
+    left : 0;
+    cursor: nesw-resize;
+
+}
+.tc{
+    top : 0;
+    left : 50%;
+    cursor: ns-resize;
+
+}
+.bc{
+    bottom : 0;
+    left : 50%;
+    cursor: ns-resize;
+
+}
+.lc{
+    top : 50%;
+    left : 0;
+    cursor: ew-resize;
+
+}
+.rc{
+    top : 50%;
+    right : 0;
+    cursor: ew-resize;
+}
+
+#opvid{
+	position:absolute;
+	top:300;
+	left : 30;
+}
+#opimg{
+	position:absolute;
+	top:350;
+	left : 30;
+}
+.last{
+  position:absolute;
+  top:-60;
+  left : 430; 
+}
