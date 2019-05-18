@@ -1,5 +1,5 @@
 # Projet ModuleDeCapture
-L'interface de l'appilcation
+L'interface de l'application
 ![image](https://user-images.githubusercontent.com/46202333/57969154-2bd41f80-7974-11e9-8d2f-ee19d135fcb6.png)
 On autorise l'accès à l'application, après on clique sur capturer:
 
